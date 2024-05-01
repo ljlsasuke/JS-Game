@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100vh;
+    background: linear-gradient(45deg,red,green,blue);
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 我发现如果不设置下面这两个的话就会导致全屏的时候画布高度小于页面高度,
+    除非我去监听窗口大小变化的时间并重新设置画布大小 */
+    height: 100%;
+    width: 100%;
+}
+
+#collision {
+    opacity: 0;
+    /* z-index: -1; 
+    我发现这个和放html元素的先后顺序有关的如果我把collision放在前面，就用不到这个z-idnex属性了，否则的话就需要
+    给collision设置z-index小于0，不然collsion就会遮住普通的canvas*/
+}
+
+
+

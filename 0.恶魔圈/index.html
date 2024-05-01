@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../小球案例/style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .show {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 25px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas></canvas>
+    <div class="show">
+        还剩<span id="count"></span>个球
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

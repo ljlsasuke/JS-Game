@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100vh;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 50%;;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const canvasWidth = canvas.width = 700;
+        const canvasHeight = canvas.height = 700;
+        
+        class Circle{
+            constructor(x,y,radius){
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.draw();
+            }
+            draw(){
+                ctx.beginPath()
+                ctx.arc(this.x,this.y,this.radius,0,2 * Math.PI)
+                ctx.stroke()
+            }
+        }
+
+        const circle1 = new Circle(90,90,90)
+        const circle2 = new Circle(390,190,90)
+
+        const dx = circle1.x - circle2.x;
+        const dy = circle1.y - circle2.y;
+        const distance = Math.sqrt(dx ** 2 + dy ** 2)
+        if(distance > circle1.radius + circle2.radius)
+        {
+            console.log('两个圆形没有碰到');
+        }else{
+            console.log('两个圆形碰到了');
+        }
+    </script>
+</body>
+</html>

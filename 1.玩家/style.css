@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    /* ======布局====== */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  ======位置======  */
+    height: 100vh;
+    width: 100vw;
+
+}
+
+#canvas {
+    /*  ======位置======  */
+    width: 600px;
+    height: 600px;
+    /* ======修饰======   */
+    /* border: 3px solid black; */
+}
+
+.controls, .controls select, .controls select option {
+    font-size: 24px;
+}

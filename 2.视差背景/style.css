@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: black;
+}
+
+.container {
+    position: relative;
+}
+
+.container div{
+    /* position: absolute; */
+    /* 块级元素会百分百继承父元素的width，但是加了定位或浮动后就不会了 */
+    color: aliceblue;
+    font-size: 24px;
+}
+.speedSelect {
+    width: 100%;
+}
+
+#canvas {
+    width: 800px;
+    height: 700px;
+}

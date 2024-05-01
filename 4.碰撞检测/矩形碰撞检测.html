@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100vh;
+        }
+
+        div {
+            position: absolute;
+        }
+
+        div:nth-child(1) {
+            background-color: aqua;
+        }
+
+        div:nth-child(2) {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <script>
+        class Rect {
+            constructor(x, y, width, height) {
+                this.x = x;
+                this.y = y;
+                this.width = width;
+                this.height = height;
+            }
+
+            draw(dom) {
+                dom.style.top = this.y + 'px';
+                dom.style.left = this.x + 'px';
+                dom.style.width = this.width + 'px';
+                dom.style.height = this.height + 'px';
+
+            }
+        }
+        let rect1 = new Rect(0, 450, 30, 80);
+        let rect2 = new Rect(200, 220, 30, 50);
+        let [div1, div2] = document.querySelectorAll('div');
+        rect1.draw(div1)
+        rect2.draw(div2)
+
+        if (rect1.x > rect2.x + rect2.width ||
+            rect1.x + rect1.width < rect2.x ||
+            rect1.y > rect2.y + rect2.height ||
+            rect1.y + rect1.height < rect2.y
+        ) {
+            console.log('两个矩形没碰撞');
+        }
+        else {
+
+            console.log('两个矩形碰撞了');
+        }
+    </script>
+</body>
+
+</html>
