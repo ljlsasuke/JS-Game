@@ -1,7 +1,6 @@
 /**
  * @type {HTMLCanvasElement}
  */
-// 告诉vscode,这个项目为canvas项目
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -55,7 +54,7 @@ class Enemy {
 
 
         // 3.每 x 帧 修改一次目标位置
-        if (gameFrame % 100 === 0) {//每30帧更新一次目标位置
+        if (gameFrame % 100 === 0) {//每100帧更新一次目标位置
             this.targetX = Math.random() * (canvasWidth - this.width);
             this.targetY = Math.random() * (canvasHeight - this.height);
         }
